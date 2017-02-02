@@ -1,5 +1,6 @@
-self.addEventListener("message",
+this.addEventListener("message",
     function onMessage(eventData: MessageEvent) {
+        var self = <Worker> this;
         var result;
 
         var data = eventData.data;
@@ -19,8 +20,8 @@ self.addEventListener("message",
                     result = request.response;
                 if (request.status == 200) {
                     result = request.response;
-                    self.postMessage(result, location.href);
-                    self.close();
+                    self.postMessage(result);
+                    // self.close();
                 } else {
                     console.error("Error response " + request.status)
                 }

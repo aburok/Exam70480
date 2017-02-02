@@ -1,4 +1,5 @@
-self.addEventListener("message", function onMessage(eventData) {
+this.addEventListener("message", function onMessage(eventData) {
+    var self = this;
     var result;
     var data = eventData.data;
     var request = new XMLHttpRequest();
@@ -15,8 +16,7 @@ self.addEventListener("message", function onMessage(eventData) {
             result = request.response;
             if (request.status == 200) {
                 result = request.response;
-                self.postMessage(result, location.href);
-                self.close();
+                self.postMessage(result);
             }
             else {
                 console.error("Error response " + request.status);

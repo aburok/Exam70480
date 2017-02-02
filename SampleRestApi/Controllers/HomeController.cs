@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MvcApp.Controllers
@@ -33,6 +34,7 @@ namespace MvcApp.Controllers
             return View();
         }
 
+        [EnableCors("SiteCorsPolicy")]
         public IActionResult Customer(int number)
         {
             Thread.Sleep(1000);
