@@ -13,5 +13,10 @@
     "bootstrap": "^3.3.7",
     "knockout": "^3.4.1",
     "typescript": "^2.1.5"
+  },
+  "dependencies": {
+    "jQuery": "^1.7.4",
+    "knockout": "^3.4.1",
+    "requirejs": "^2.3.2"
   }
 }
